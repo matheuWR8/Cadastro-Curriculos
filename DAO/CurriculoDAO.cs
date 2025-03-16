@@ -205,33 +205,64 @@ namespace Curriculos.DAO
         /// <returns>View model do currículo</returns>
         private CurriculoViewModel MontarModel(DataRow registro)
         {
-            // ToDo: se algum campo da tabela estiver nulo dá problema.
-            // Usar condicional resolve, mas não o problema só ocorre com inserções manuais
-            CurriculoViewModel curriculo = new CurriculoViewModel()
-            {
-                Cpf = registro["cpf"].ToString(),
-                Nome = registro["nome"].ToString(),
-                DataNascimento = Convert.ToDateTime(registro["data_nascimento"]),
-                Endereco = registro["endereco"].ToString(),
-                Telefone = registro["telefone"].ToString(),
-                Email = registro["email"].ToString(),
-                Salario = Convert.ToDouble(registro["salario"]),
-                Cargo = registro["cargo"].ToString(),
-            };
+            CurriculoViewModel curriculo = new CurriculoViewModel();
 
-            curriculo.Formacoes[0] = registro["formacao1"].ToString();
-            curriculo.Formacoes[1] = registro["formacao2"].ToString();
-            curriculo.Formacoes[2] = registro["formacao3"].ToString();
-            curriculo.Formacoes[3] = registro["formacao4"].ToString();
-            curriculo.Formacoes[4] = registro["formacao5"].ToString();
+            if (registro["cpf"] != DBNull.Value)
+                curriculo.Cpf = registro["cpf"].ToString();
 
-            curriculo.Experiencias[0] = registro["experiencia1"].ToString();
-            curriculo.Experiencias[1] = registro["experiencia2"].ToString();
-            curriculo.Experiencias[2] = registro["experiencia3"].ToString();
+            if (registro["nome"] != DBNull.Value)
+                curriculo.Nome = registro["nome"].ToString();
 
-            curriculo.Idiomas[0] = registro["idioma1"].ToString();
-            curriculo.Idiomas[1] = registro["idioma2"].ToString();
-            curriculo.Idiomas[2] = registro["idioma3"].ToString();
+            if (registro["data_nascimento"] != DBNull.Value)
+                curriculo.DataNascimento = Convert.ToDateTime(registro["data_nascimento"]);
+
+            if (registro["endereco"] != DBNull.Value)
+                curriculo.Endereco = registro["endereco"].ToString();
+
+            if (registro["telefone"] != DBNull.Value)
+                curriculo.Telefone = registro["telefone"].ToString();
+
+            if (registro["email"] != DBNull.Value)
+                curriculo.Email = registro["email"].ToString();
+
+            if (registro["salario"] != DBNull.Value)
+                curriculo.Salario = Convert.ToDouble(registro["salario"]);
+
+            if (registro["cargo"] != DBNull.Value)
+                curriculo.Cargo = registro["cargo"].ToString();
+
+            if (registro["formacao1"] != DBNull.Value)
+                curriculo.Formacoes[0] = registro["formacao1"].ToString();
+
+            if (registro["formacao2"] != DBNull.Value)
+                curriculo.Formacoes[1] = registro["formacao2"].ToString();
+
+            if (registro["formacao3"] != DBNull.Value)
+                curriculo.Formacoes[2] = registro["formacao3"].ToString();
+
+            if (registro["formacao4"] != DBNull.Value)
+                curriculo.Formacoes[3] = registro["formacao4"].ToString();
+
+            if (registro["formacao5"] != DBNull.Value)
+                curriculo.Formacoes[4] = registro["formacao5"].ToString();
+
+            if (registro["experiencia1"] != DBNull.Value)
+                curriculo.Experiencias[0] = registro["experiencia1"].ToString();
+
+            if (registro["experiencia2"] != DBNull.Value)
+                curriculo.Experiencias[1] = registro["experiencia2"].ToString();
+
+            if (registro["experiencia3"] != DBNull.Value)
+                curriculo.Experiencias[2] = registro["experiencia3"].ToString();
+
+            if (registro["idioma1"] != DBNull.Value)
+                curriculo.Idiomas[0] = registro["idioma1"].ToString();
+
+            if (registro["idioma2"] != DBNull.Value)
+                curriculo.Idiomas[1] = registro["idioma2"].ToString();
+
+            if (registro["idioma3"] != DBNull.Value)
+                curriculo.Idiomas[2] = registro["idioma3"].ToString();
 
             return curriculo;
         }
