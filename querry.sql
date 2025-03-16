@@ -24,3 +24,8 @@ CREATE TABLE Curriculos(
 
 drop table Curriculos
 
+select * from curriculos
+
+
+insert into Curriculos (cpf, nome, data_nascimento, endereco, telefone, email, salario, cargo, formacao1, formacao2, formacao3, formacao4, formacao5, experiencia1, experiencia2, experiencia3, idioma1, idioma2, idioma3) 
+values (@cpf, @nome, @data_nascimento, @endereco, @telefone, @email, @salario, @cargo, @formacao1, @formacao2, @formacao3, @formacao4, @formacao5, @experiencia1, @experiencia2, @experiencia3, @idioma1, @idioma2, @idioma3)

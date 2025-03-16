@@ -1,0 +1,74 @@
+﻿@model CurriculoViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastro de Currículo</h2>
+
+<form action="Salvar" method="post">
+    <label for="Nome" class="control-label">Nome</label>
+    <input type="text" name="Nome" value="@Model.Nome" />
+    <br />
+
+    <label for="Cpf" class="control-label">CPF</label>
+    <input type="text" name="Cpf" value="@Model.Cpf" />
+    <br />
+
+    <label for="DataNascimento" class="control-label">Data de Nascimento</label>
+    <input type="date" name="DataNascimento" value="@Model.DataNascimento" />
+    <br />
+
+    <label for="Endereco" class="control-label">Endereço</label>
+    <input type="text" name="Endereco" value="@Model.Endereco" />
+    <br />
+
+    <label for="Telefone" class="control-label">Telefone</label>
+    <input type="tel" name="Telefone" value="@Model.Telefone" />
+    <br />
+
+    <label for="Email" class="control-label">E-mail</label>
+    <input type="email" name="Email" value="@Model.Email" />
+    <br />
+
+    <label for="Salario" class="control-label">Pretensão de Salário</label>
+    <input type="text" name="Salario" value="@Model.Salario" />
+    <br />
+
+    <label for="Cargo" class="control-label">Cargo Pretendido</label>
+    <input type="text" name="Cargo" value="@Model.Cargo" />
+    <br />
+
+    <label for="Formacao1" class="control-label">Formação 1</label>
+    <br />
+    <input type="text" name="Formacoes[0]" value="@Model.Formacoes[0]" />
+    <br />
+    <input type="text" name="Formacoes[1]" value="@Model.Formacoes[1]" />
+    <br />
+    <input type="text" name="Formacoes[2]" value="@Model.Formacoes[2]" />
+    <br />
+    <input type="text" name="Formacoes[3]" value="@Model.Formacoes[3]" />
+    <br />
+    <input type="text" name="Formacoes[4]" value="@Model.Formacoes[4]" />
+    <br />
+
+    <label for="Experiencias" class="control-label">Experiências profissionais</label>
+    <br />
+    <input type="text" name="Experiencias[0]" value="@Model.Experiencias[0]" />
+    <br />
+    <input type="text" name="Experiencias[1]" value="@Model.Experiencias[1]" />
+    <br />
+    <input type="text" name="Experiencias[2]" value="@Model.Experiencias[2]" />
+    <br />
+
+    <label for="Idiomas" class="control-label">Idiomas</label>
+    <br />
+    <input type="text" name="Idiomas[0]" value="@Model.Idiomas[0]" />
+    <br />
+    <input type="text" name="Idiomas[1]" value="@Model.Idiomas[1]" />
+    <br />
+    <input type="text" name="Idiomas[2]" value="@Model.Idiomas[2]" />
+    <br />
+
+    <input type="submit" value="Salvar Currículo" />
+
+</form>

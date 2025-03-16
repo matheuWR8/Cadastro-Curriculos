@@ -46,7 +46,7 @@ namespace Curriculos
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Curriculo}/{action=Index}/{id?}");
             });
         }
     }

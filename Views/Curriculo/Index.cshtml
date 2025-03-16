@@ -1,0 +1,24 @@
+﻿@model List<CurriculoViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listagem de Alunos</h2>
+
+<a href="/curriculo/create">Novo registro</a>
+
+<table class="table table-responsive">
+    <tr>
+        <th>Ações</th>
+        <th>Nome</th>
+        <th>CPF</th>
+    </tr>
+    @foreach (var curriculo in Model)
+    {
+        <tr>
+            <td></td>
+            <td>@curriculo.Nome</td>
+            <td>@curriculo.Cpf</td>
+        </tr>
+    }
+</table>
