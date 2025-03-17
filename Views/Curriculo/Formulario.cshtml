@@ -1,5 +1,6 @@
 ﻿@model CurriculoViewModel
 @{
+    ViewData["Title"] = "Cadastro";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -7,15 +8,15 @@
 
 <form action="Salvar" method="post">
     <label for="Nome" class="control-label">Nome</label>
-    <input type="text" name="Nome" value="@Model.Nome" />
+    <input type="text" name="Nome" value="@Model.Nome" required/>
     <br />
 
     <label for="Cpf" class="control-label">CPF</label>
-    <input type="text" name="Cpf" value="@Model.Cpf" />
+    <input type="text" name="Cpf" value="@Model.Cpf" required/>
     <br />
 
     <label for="DataNascimento" class="control-label">Data de Nascimento</label>
-    <input type="date" name="DataNascimento" value="@Model.DataNascimento" />
+    <input type="date" name="DataNascimento" value="@Model.DataNascimento.ToString("yyyy-MM-dd")" />
     <br />
 
     <label for="Endereco" class="control-label">Endereço</label>
@@ -40,7 +41,7 @@
 
     <label for="Formacao1" class="control-label">Formação 1</label>
     <br />
-    <input type="text" name="Formacoes[0]" value="@Model.Formacoes[0]" />
+    <input type="text" name="Formacoes[0]" value="@Model.Formacoes[0]" required/>
     <br />
     <input type="text" name="Formacoes[1]" value="@Model.Formacoes[1]" />
     <br />

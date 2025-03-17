@@ -1,0 +1,55 @@
+﻿@model CurriculoViewModel
+@{
+    ViewData["Title"] = Model.Nome;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="curriculo">
+    <h1 id="nome">@Model.Nome</h1>
+
+    <h3 class="subtitulo">Dados Pessoais</h3>
+
+    <ul class="curriculo dados-pessoais">
+        <li>CPF: @Model.Cpf</li>
+        <li>Data de Nascimento: @Model.DataNascimento.ToString("d")</li>
+        <li>Endereço: @Model.Endereco</li>
+        <li>Telefone: @Model.Telefone</li>
+        <li>E-mail: <a href="mailto:@Model.Email">@Model.Email</a></li>
+    </ul>
+
+    <p class="curriculo objetivo">Cargo Pretendido: <strong>@Model.Cargo</strong></p>
+    <p class="curriculo objetivo">Pretensão Salarial: @Model.Salario.ToString()</p>
+
+    <h3 class="curriculo subtitulo">Cursos e Formação Acadêmica</h3>
+    <ul class="curriculo lista">
+        @foreach (string formacao in Model.Formacoes)
+        {
+            if (formacao != "" && formacao != null)
+            {
+                <li>@formacao</li>
+            }
+        }
+    </ul>
+
+    <h3 class="curriculo subtitulo">Experiências Profissionais</h3>
+    <ul class="curriculo lista">
+        @foreach (string experiencia in Model.Experiencias)
+        {
+            if (experiencia != "" && experiencia != null)
+            {
+                <li>@experiencia</li>
+            }
+        }
+    </ul>
+
+    <h3 class="curriculo subtitulo">Idiomas</h3>
+    <ul class="curriculo lista">
+        @foreach (string idioma in Model.Idiomas)
+        {
+            if (idioma != "" && idioma != null)
+            {
+                <li>@idioma</li>
+            }
+        }
+    </ul>
+</div>

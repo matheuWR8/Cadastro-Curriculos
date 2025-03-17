@@ -103,12 +103,12 @@ namespace Curriculos.DAO
             if (curriculo.Cpf != null)
                 parametros[0] = new SqlParameter("@cpf", curriculo.Cpf);
             else
-                parametros[0] = new SqlParameter("@cpf", DBNull.Value);
+                throw new Exception("O CPF não pode ficar vazio.");
 
             if (curriculo.Nome != null)
                 parametros[1] = new SqlParameter("@nome", curriculo.Nome);
             else
-                parametros[1] = new SqlParameter("@nome", DBNull.Value);
+                throw new Exception("O Nome não pode ficar vazio.");
 
             if (curriculo.DataNascimento != null)
                 parametros[2] = new SqlParameter("@data_nascimento", curriculo.DataNascimento);
